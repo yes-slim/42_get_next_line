@@ -6,12 +6,16 @@
 /*   By: yes-slim <yes-slim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 15:41:44 by yes-slim          #+#    #+#             */
-/*   Updated: 2022/11/13 18:48:01 by yes-slim         ###   ########.fr       */
+/*   Updated: 2022/11/16 21:47:05 by yes-slim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 10
+# endif
 
 # include <stdio.h>
 # include <unistd.h>
