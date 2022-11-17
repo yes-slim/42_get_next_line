@@ -6,7 +6,7 @@
 /*   By: yes-slim <yes-slim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 15:41:12 by yes-slim          #+#    #+#             */
-/*   Updated: 2022/11/14 18:54:23 by yes-slim         ###   ########.fr       */
+/*   Updated: 2022/11/17 23:04:15 by yes-slim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*get_next_line(int fd)
 	static char	*str[OPEN_MAX];
 	char		*ret;
 
-	if (fd < 0 || BUFFER_SIZE < 0)
+	if (fd < 0 || BUFFER_SIZE < 0 || BUFFER_SIZE == INT_MAX)
 		return (NULL);
 	str[fd] = ft_read(fd, str[fd]);
 	if (!str[fd])
