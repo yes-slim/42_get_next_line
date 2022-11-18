@@ -6,7 +6,7 @@
 /*   By: yes-slim <yes-slim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 15:41:12 by yes-slim          #+#    #+#             */
-/*   Updated: 2022/11/17 23:04:15 by yes-slim         ###   ########.fr       */
+/*   Updated: 2022/11/18 14:11:20 by yes-slim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*get_next_line(int fd)
 	static char	*str[OPEN_MAX];
 	char		*ret;
 
-	if (fd < 0 || BUFFER_SIZE < 0 || BUFFER_SIZE == INT_MAX)
+	if (fd < 0 || BUFFER_SIZE < 0)
 		return (NULL);
 	str[fd] = ft_read(fd, str[fd]);
 	if (!str[fd])
@@ -33,7 +33,7 @@ char	*ft_read(int fd, char *str)
 	int		i;
 
 	i = 1;
-	buffer = malloc(sizeof(char) * (BUFFER_SIZE + 1));
+	buffer = malloc(sizeof(char) * BUFFER_SIZE + 1);
 	if (!buffer)
 		return (NULL);
 	while (!ft_strchr(str, '\n') && i)
